@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fieldfox-ethernet-browser"
+version = "0.1.0"
+description = "Browse and download FieldFox instrument folders over Ethernet SCPI"
+readme = "README.md"
+requires-python = ">=3.11"
+
+[project.scripts]
+fieldfox-browser = "fieldfox_browser.__main__:main"
+
+[project.gui-scripts]
+fieldfox-file-browser = "fieldfox_browser.gui:main"
+
+[tool.setuptools.packages.find]
+include = ["fieldfox_browser*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
